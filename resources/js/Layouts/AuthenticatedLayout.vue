@@ -1,3 +1,4 @@
+
 <script setup>
 import { ref } from 'vue';
 import ApplicationLogo from '@/Components/ApplicationLogo.vue';
@@ -64,10 +65,20 @@ const showingNavigationDropdown = ref(false);
                                 class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex"
                             >
                                 <NavLink
-                                    :href="route('employees.index')"
-                                    :active="route().current('employees.index')"
+                                    :href="route('graphic')"
+                                    :active="route().current('graphic')"
                                 >
                                     Graphic
+                                </NavLink>
+                            </div>
+                            <div
+                                class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex"
+                            >
+                                <NavLink
+                                    :href="route('graphic')"
+                                    :active="route().current('graphic')"
+                                >
+                                    Reports
                                 </NavLink>
                             </div>
 
@@ -176,6 +187,30 @@ const showingNavigationDropdown = ref(false);
                             :active="route().current('dashboard')"
                         >
                             Dashboard
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            :href="route('departments.index')"
+                            :active="route().current('departments.index')"
+                        >
+                        Departments
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            :href="route('employees.index')"
+                            :active="route().current('employees.index')"
+                        >
+                        Employees
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            :href="route('graphic')"
+                            :active="route().current('graphic.index')"
+                        >
+                        Graphic
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            :href="route('reports')"
+                            :active="route().current('reports.index')"
+                        >
+                        Reports
                         </ResponsiveNavLink>
                     </div>
 
