@@ -53,7 +53,31 @@ const deleteDepartment = (id, name)=>{
             </div>
             <div class="bg-white grid v-screen place-items-center">
                 <table class="table-auto border border-gray-400">
-
+                    <thead>
+                        <tr class="bg-gray-100">
+                            <th class="px-4 py-4">#</th>
+                            <th class="px-4 py-4">DEPARTMENT</th>
+                            <th class="px-4 py-4"></th>
+                            <th class="px-4 py-4"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="dep, i in departments" :key="dep.id">
+                            <td class="border border-gray-400 px-4 py-4">{{ (i+1) }}</td>
+                            <td class="border border-gray-400 px-4 py-4">{{ dep.name }}</td>
+                            <td class="border border-gray-400 px-4 py-4">
+                                <Link :href="route('departments.edit', dep.id)"
+                                :class="'px-4 py-2 bg-yellow-400 text-white border rounded-md font-semibold text-xs'" >
+                                <i class="fa-solid fa-edit"></i>
+                                </Link>
+                            </td>
+                            <td class="border border-gray-400 px-4 py-4">
+                                <DangerButton @click="$event => deleteDepartment(dep.id,dep.name)">
+                                    <i class="fa-solid fa-trash"></i>
+                                </DangerButton>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
