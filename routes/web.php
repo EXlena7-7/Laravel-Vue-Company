@@ -8,13 +8,27 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\EmployeeController;
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
+    if (Auth::check()) {
+        // Si el usuario está autenticado, redirige al dashboard
+        return redirect()->route('dashboard');
+    }
+    // Si no está autenticado, muestra la vista de login
+    return Inertia::render('Auth/Login', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
 });
+
+// Route::get('/login', function () {
+//     return Inertia::render('Auth/Login', [
+//         'canLogin' => Route::has('login'),
+//         'canRegister' => Route::has('register'),
+//         'laravelVersion' => Application::VERSION,
+//         'phpVersion' => PHP_VERSION,
+//     ]);
+// });
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
