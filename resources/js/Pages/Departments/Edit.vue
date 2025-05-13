@@ -28,7 +28,7 @@ const form = useForm({
         <div class="py-12">
             <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div class="p-4 bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                    <form @submit.prevent="$event => form.path(route('departments.update', department))"
+                    <form @submit.prevent="$event => form.patch(route('departments.update', department))"
                         class="mt-6 space-y-6 max-w-xl">
                         <InputLabel for="name" value="Department"></InputLabel>
                         <TextInput
