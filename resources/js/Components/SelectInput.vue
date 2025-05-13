@@ -17,10 +17,14 @@ defineExpose({focus: () => input.value.focus()});
 </script>
 
 <template>
-    <input
+    <select
         class="rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
         :value="modelValue"
-        @input="$event => $emit('update:modelValue', $event.target.value)"
+        @change="$event => $emit('update:modelValue', $event.target.value)"
         ref="input"
-    />
+    >
+    <option v-for="op in options" :key="op.i" :value="op.id">
+        {{ op.name }}
+    </option>
+    </select>
 </template>
