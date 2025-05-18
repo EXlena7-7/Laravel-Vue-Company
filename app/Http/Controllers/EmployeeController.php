@@ -65,7 +65,7 @@ class EmployeeController extends Controller
     }
     public function reports(){
         $employees = Employee::select('employees.id','employees.name', 'email', 'phone',
-        'department_id', 'departments.names as department')
+        'department_id', 'departments.name as department')
         ->join('departments', 'departments.id', '=', 'employees.department_id')
         ->get();
 
