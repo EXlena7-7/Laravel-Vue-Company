@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use Database\Seeders\EmployeeSeeder;
 use Database\Seeders\DepartmentSeeder;
+use Database\Seeders\AdminSeeder;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -15,17 +16,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Department::factory(6)->create();
-        \App\Models\Employee::factory(25)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
-
         $this->call([
-        EmployeeSeeder::class,
-        DepartmentSeeder::class
-    ]);
+            AdminSeeder::class,
+            DepartmentSeeder::class,
+            EmployeeSeeder::class
+        ]);
     }
 }

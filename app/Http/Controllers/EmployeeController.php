@@ -12,7 +12,7 @@ class EmployeeController extends Controller
     public function index()
     {
      $employees = Employee::select('employees.id','employees.name', 'email', 'phone',
-    'department_id', 'departments.names as department')
+    'department_id', 'departments.name as department')
     ->join('departments', 'departments.id', '=', 'employees.department_id')
     ->paginate(10);
 

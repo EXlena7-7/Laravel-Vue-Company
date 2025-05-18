@@ -111,10 +111,11 @@ const deleteEmployee = (id, name)=>{
                     </PrimaryButton>
                 </div>
             </div>
-            <div class="bg-white grid v-screen place-items-center overflow-auto">
+            <div class="bg-white grid v-screen place-items-center overflow-x-auto">
                 <table class="table-auto border border-gray-400">
                     <thead>
-                        <tr class="bg-gray-100">                            <th class="px-2 py-2">#</th>
+                        <tr class="bg-gray-100">
+                            <th class="px-2 py-2">#</th>
                             <th class="px-2 py-2">NAME</th>
                             <th class="px-2 py-2">EMAIL</th>
                             <th class="px-2 py-2">PHONE</th>
@@ -142,6 +143,14 @@ const deleteEmployee = (id, name)=>{
                         </tr>
                     </tbody>
                 </table>
+            </div>
+            <div class="bg-white grid v-screen place-items-center">
+                <VueTailwindPagination
+                    :current="employees.current" :total="employees.total"
+                    :per-page="employees.perPage"
+                    @page-changed="onPageClick($event)"
+                    >
+                </VueTailwindPagination>
             </div>
         </div>
     </AuthenticatedLayout>
