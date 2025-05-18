@@ -184,7 +184,16 @@ const deleteEmployee = (id, name)=>{
                 ></SelectInput>
                 <InputError :message="form.errors.department_id" class="mt-2"></InputError>
             </div>
-
+            <div class="p-3 mt-6">
+                <PrimaryButton :disabled="form.processing" @click="save">
+                    <i class="fa-solid fa-save"></i> Save
+                </PrimaryButton>
+            </div>
+            <div class="p-3 mt-6 flex justify-end">
+                <SecondaryButton class="ml-3" :disabled="form.processing" @click="closeModal">
+                    <i class="fa-solid fa-ban"></i>  Cancel
+                </SecondaryButton>
+            </div>
         </Modal>
     </AuthenticatedLayout>
 </template>

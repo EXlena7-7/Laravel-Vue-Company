@@ -53,6 +53,9 @@ class DepartmentController extends Controller
 
     public function destroy(Department $department)
     {
+        // Eliminar los empleados asociados primero
+        $department->employees()->delete();
+        // Luego eliminar el departamento
         $department->delete();
         return redirect('departments');
     }

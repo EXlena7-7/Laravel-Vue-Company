@@ -21,7 +21,7 @@ return new class extends Migration
                 ->references('id')
                 ->on('departments')
                 ->onUpdate('cascade')
-                ->onDelete('restrict');
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
