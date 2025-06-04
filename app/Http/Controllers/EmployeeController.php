@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employee;
-use App\Models\Department;
 use Illuminate\Http\Request;
+use App\Models\Department;
 use Inertia\Inertia;
 use DB;
+
 class EmployeeController extends Controller
 {
     public function index()

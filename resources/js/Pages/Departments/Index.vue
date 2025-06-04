@@ -42,12 +42,13 @@ const deleteDepartment = (id, name)=>{
             </h2>
         </template>
 
-        <div class="py-12">
+        <div class="py-6 rounded-lg bg-white shadow-md">
             <div class="bg-white grid v-screen place-items-center">
                 <div class="mt-3 mb-3 flex">
                     <Link :href="route('departments.create')"
-                    :class="'px-4 py-2 bg-gray-800 text-white border roundend-md font-semibold text-xs'" >
+                    :class="'px-4 py-2 bg-gray-800 text-white border '" >
                     <i class="fa-solid fa-plus-circle"></i>
+                    Add
                     </Link>
                 </div>
             </div>
